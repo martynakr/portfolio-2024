@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# Portfolio 2024
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Check out the live page [here](http://martynakrol.me/)
 
-Currently, two official plugins are available:
+This project is my updated portfolio. Apart from having a place w here I can showcase my projects, there are two other reasons I decided to work on it:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   I've been working as a software developer for over 2 years now - I want the code for this page to represent my current skills level
+-   It is FUN - personal projects like this are always a great way to remind myself why I started coding in the first place
 
-## Expanding the ESLint configuration
+## Design Idea
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Canvas element logic explained
 
-- Configure the top-level `parserOptions` property like this:
+### Change log
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+-   **1 June 2024** - setting up a landing page which links to Github. The main focus for today was getting an understanding of how to work with the HTML canvas element as well as exploring and researching the math logic for bending the line in response to move movements.
