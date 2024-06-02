@@ -1,3 +1,5 @@
+@use "./assets/mixins.scss" as mixins;
+
 * {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -16,6 +18,10 @@ h1 {
     letter-spacing: 0.2em;
     font-weight: 500;
     font-size: 80px;
+
+    @include mixins.phone {
+        font-size: 60px;
+    }
 }
 
 h3 {
