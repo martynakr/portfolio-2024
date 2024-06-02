@@ -14,12 +14,15 @@ const BendingLine = () => {
 
         const points: { x: number; y: number }[] = [];
         const numPoints = 60;
-        const spacing = canvas.width / (numPoints - 1);
 
-        for (let i = 0; i < numPoints; i++) {
-            points.push({ x: i * spacing, y: 2 * (canvas.height / 3) });
-        }
-        ``;
+        const initializePoints = () => {
+            points.length = 0;
+            const spacing = canvas.width / (numPoints - 1);
+            for (let i = 0; i < numPoints; i++) {
+                points.push({ x: i * spacing, y: 2 * (canvas.height / 3) });
+            }
+        };
+
         const drawLine = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
@@ -59,11 +62,21 @@ const BendingLine = () => {
             drawLine();
         };
 
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth * 0.7;
+            canvas.height = 200;
+            initializePoints();
+            drawLine();
+        };
+
         canvas.addEventListener("mousemove", handleMouseMove);
-        drawLine();
+        window.addEventListener("resize", resizeCanvas);
+
+        resizeCanvas();
 
         return () => {
             canvas.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("resize", resizeCanvas);
         };
     }, []);
 

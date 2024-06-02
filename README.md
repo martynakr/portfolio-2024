@@ -14,3 +14,5 @@ This project is my updated portfolio. Apart from having a place w here I can sho
 ### Change log
 
 -   **1 June 2024** - setting up a landing page which links to Github. The main focus for today was getting an understanding of how to work with the HTML canvas element as well as exploring and researching the math logic for bending the line in response to move movements.
+
+-   **2 June 2024** - Made the canvas element responsive
