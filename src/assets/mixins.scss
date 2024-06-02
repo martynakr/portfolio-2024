@@ -8,3 +8,9 @@ $laptop: 1200px;
         @content;
     }
 }
+
+@mixin tablet {
+    @media only screen and (min-width: $phone) and (max-width: $landscape-tablet) {
+        @content;
+    }
+}

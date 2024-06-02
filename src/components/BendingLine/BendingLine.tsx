@@ -63,7 +63,11 @@ const BendingLine = () => {
         };
 
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth * 0.7;
+            if (window.innerWidth <= 992) {
+                canvas.width = window.innerWidth * 0.8;
+            } else {
+                canvas.width = window.innerWidth * 0.7;
+            }
             canvas.height = 200;
             initializePoints();
             drawLine();

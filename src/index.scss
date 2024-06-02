@@ -22,6 +22,9 @@ h1 {
     @include mixins.phone {
         font-size: 60px;
     }
+    @include mixins.tablet {
+        font-size: 68px;
+    }
 }
 
 h3 {
