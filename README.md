@@ -2,14 +2,13 @@
 
 Check out the live page [here](http://martynakrol.me/)
 
-This project is my updated portfolio. Apart from having a place w here I can showcase my projects, there are two other reasons I decided to work on it:
-
--   I've been working as a software developer for over 2 years now - I want the code for this page to represent my current skills level
--   It is FUN - personal projects like this are always a great way to remind myself why I started coding in the first place
+This project is my updated portfolio. Although I do feel a little sentimental about my [first ever software developer portfolio](https://martynakr.github.io/portfolio/) and I still like the design of it, after almost 3 years of working as a dev it's time for a new one.
 
 ## Design Idea
 
-### Canvas element logic explained
+I wanted to keep it simple and minimalistic, but at the same time I wanted it to be interesting. I decided to add an interactive element created with canvas that the user can play with
+
+![Portfolio](./portfolio.gif)
 
 ### Change log
 
