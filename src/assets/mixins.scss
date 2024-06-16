@@ -1,0 +1,16 @@
+$phone: 576px;
+$tablet: 768px;
+$landscape-tablet: 992px;
+$laptop: 1200px;
+
+@mixin phone {
+    @media only screen and (max-width: $phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: $phone) and (max-width: $landscape-tablet) {
+        @content;
+    }
+}

@@ -1,0 +1,18 @@
+/* src/BendingLine.css */
+.line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.line {
+    width: 2px;
+    height: 200px;
+    background-color: black;
+    transition: transform 0.5s ease;
+}
+
+.line-container:hover .line {
+    transform: rotate(20deg);
+}

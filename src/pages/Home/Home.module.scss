@@ -1,0 +1,31 @@
+@use "../../assets/palette.scss" as palette;
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 95vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.line {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.heading {
+    grid-area: 1 / 1 / 2 / 2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.divider {
+    font-weight: 900;
+    color: palette.$blueGrey;
+    margin: 0 5px;
+}

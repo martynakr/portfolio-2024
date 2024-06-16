@@ -1,0 +1,25 @@
+@use "../../assets/palette.scss" as palette;
+
+.footer {
+    background-color: palette.$skyBlue;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 95vw;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 16px;
+}
+
+.span {
+    font-weight: 700;
+}
+
+a {
+    font-weight: 700;
+    color: palette.$blueGrey;
+}
+
+a:visited {
+    color: palette.$blueGrey;
+}
