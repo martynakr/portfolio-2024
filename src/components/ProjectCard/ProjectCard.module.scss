@@ -1,0 +1,56 @@
+@use "../../assets/palette.scss" as palette;
+
+.card {
+    position: relative;
+    border-left: 16px solid palette.$skyBlue;
+    padding: 2em;
+    margin: 2em;
+    overflow: hidden;
+}
+
+.top,
+.right,
+.bottom {
+    position: absolute;
+    background-color: palette.$skyBlue;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.top {
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 0;
+    transition-delay: 0s;
+}
+
+.right {
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 0;
+    transition-delay: 0.2s;
+}
+
+.bottom {
+    bottom: 0;
+    right: 0;
+    height: 16px;
+    width: 0;
+    transition-delay: 0.4s;
+}
+
+.card:hover {
+    .top {
+        width: 100%;
+    }
+
+    .right {
+        height: 100%;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+}
