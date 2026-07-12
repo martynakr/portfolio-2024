@@ -1,0 +1,13 @@
+@use "../../assets/palette.scss" as palette;
+
+.about {
+    background-color: palette.$skyBlue;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.image {
+    width: 30%;
+    border: 12px solid white;
+}

@@ -1,12 +1,11 @@
 import BendingLine from "../../components/BendingLine/BendingLine";
-import Footer from "../../components/Footer/Footer";
 import styles from "./Home.module.scss";
 
 const Home = () => {
     return (
         <div className={styles.home}>
             <header className={styles.container}>
-                <h1 className={styles.heading}>MARTYNA KROL</h1>
+                <h1 className={styles.heading}>MARTYNA KRÓL</h1>
                 <div className={styles.line}>
                     <BendingLine />
                 </div>
@@ -14,16 +13,17 @@ const Home = () => {
 
             <main>
                 <h3>
-                    Software Developer{" "}
-                    <span className={styles.divider}> | </span> Coach
+                    Software Developer
+                    <span className={styles.divider}> | </span> Educator
                 </h3>
-                <p>
+                {/* <p>
                     Check out out my work on{" "}
                     <a href="https://github.com/martynakr">Github</a>
-                </p>
+                </p> */}
+                {/* <About /> */}
             </main>
-
-            <Footer />
+            {/* 
+            <Footer /> */}
         </div>
     );
 };

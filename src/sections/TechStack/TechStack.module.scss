@@ -1,0 +1,14 @@
+@use "../../assets/palette.scss" as palette;
+
+.tech_stack {
+    background-color: palette.$blueGrey;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: center;
+    margin-top: 2em;
+}
