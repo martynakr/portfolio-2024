@@ -6,8 +6,6 @@ const BendingLine = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        canvas.width = 900;
-        canvas.height = 200;
 
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
@@ -118,10 +116,13 @@ const BendingLine = () => {
         };
 
         const resizeCanvas = () => {
-            if (window.innerWidth <= 992) {
-                canvas.width = window.innerWidth * 0.95;
+            const width = document.documentElement.clientWidth;
+            if (width <= 576) {
+                canvas.width = width;
+            } else if (width <= 992) {
+                canvas.width = width * 0.95;
             } else {
-                canvas.width = window.innerWidth * 0.9;
+                canvas.width = width * 0.9;
             }
             canvas.height = 200;
             initializePoints();

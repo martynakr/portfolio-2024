@@ -18,8 +18,10 @@ const Home = () => {
                 <h3
                     className={`${styles.roles} ${styles.fadeUp} ${styles.delay1}`}
                 >
-                    Software Developer
-                    <span className={styles.divider}> | </span> Educator
+                    <span className={styles.word}>Software Developer</span>
+                    <span className={styles.word}>
+                        <span className={styles.divider}> | </span>Educator
+                    </span>
                 </h3>
 
                 {/* <About /> */}
