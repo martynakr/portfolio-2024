@@ -38,8 +38,9 @@
     text-box: trim-both cap alphabetic;
 
     @include mixins.phone {
-        font-size: 14vw;
+        font-size: 12vw;
         line-height: 1.1;
+        padding-inline: 1.5rem;
     }
 }
 
@@ -65,15 +66,15 @@
 
 .fadeUp {
     opacity: 0;
-    animation: fadeUp 0.7s ease-out forwards;
+    animation: fadeUp 1.2s ease-out forwards;
 }
 
 .delay1 {
-    animation-delay: 0.6s;
+    animation-delay: 0.9s;
 }
 
 .delay2 {
-    animation-delay: 1.1s;
+    animation-delay: 1.6s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -95,4 +96,10 @@
     font-weight: 900;
     color: #a993e8;
     margin: 0 5px;
+}
+
+.roles .word {
+    @include mixins.phone {
+        line-height: 1.8;
+    }
 }
