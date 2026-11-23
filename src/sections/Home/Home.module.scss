@@ -1,4 +1,5 @@
 @use "../../assets/palette.scss" as palette;
+@use "../../assets/textures.scss" as textures;
 
 .home {
     display: flex;
@@ -7,24 +8,7 @@
     align-items: center;
     text-align: center;
     height: 95vh;
-    position: relative;
-    isolation: isolate; // keeps the texture above any parent background
-
-    // Faint dot texture that fades out towards the edges
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-        background-image: radial-gradient(#d6cdf5 1px, transparent 1px);
-        background-size: 22px 22px;
-        mask-image: radial-gradient(
-            ellipse at center,
-            black 30%,
-            transparent 75%
-        );
-    }
+    @include textures.dot-texture;
 }
 .container {
     display: grid;
@@ -96,6 +80,6 @@
 
 .divider {
     font-weight: 900;
-    color: #e2d9ff; // lilac from the bending line
+    color: #a993e8; // deeper lilac, same hue as the line
     margin: 0 5px;
 }

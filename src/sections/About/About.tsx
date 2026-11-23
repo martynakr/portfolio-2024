@@ -11,7 +11,7 @@ const About = () => {
                 className={styles.image}
             />
             <div>
-                <H3>ABOUT ME</H3>
+                <H3 className={styles.heading}>ABOUT ME</H3>
                 <p>
                     I'm a Software Development Educator and Full Stack Developer
                     with a passion for building modern web applications and

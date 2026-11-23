@@ -1,13 +1,31 @@
 @use "../../assets/palette.scss" as palette;
+@use "../../assets/typography.scss" as typography;
 
 .about {
-    background-color: palette.$skyBlue;
+    // Faint wash of the bending line colours
+    background: linear-gradient(
+        120deg,
+        rgba(206, 235, 255, 0.5), // light blue
+        rgba(226, 217, 255, 0.5), // lilac
+        rgba(255, 220, 207, 0.5) // peach
+    );
     display: flex;
     align-items: center;
     gap: 5%;
 }
 
+.heading {
+    @include typography.section-heading;
+}
+
+.about p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
 .image {
     width: 30%;
-    border: 12px solid white;
+    border: 3px solid #a993e8; // same lilac as the Home divider
+    border-radius: 12px;
 }
