@@ -9,11 +9,9 @@ interface ProjectCardProps {
 const ProjectCard = ({ tech }: ProjectCardProps) => {
     return (
         <article className={styles.card}>
-            <span className={styles.top} />
-            <span className={styles.right} />
-            <span className={styles.bottom} />
-            <span className={styles.left} />
-
+            <svg className={styles.frame} aria-hidden="true">
+                <rect width="100%" height="100%" rx="16" pathLength="1" />
+            </svg>
             <img src="https://www.placekittens.com/300/200" alt="" />
             <div>
                 <h3>Project title</h3>
