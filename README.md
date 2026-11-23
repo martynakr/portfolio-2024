@@ -7,5 +7,3 @@ This project is my updated portfolio. Although I do feel a little sentimental ab
 ## Design Idea
 
 I wanted to keep it simple and minimalistic, but at the same time I wanted it to be interesting. I decided to add an interactive element created with canvas that the user can play with
-
-![Portfolio](./new-portfolio.gif)
