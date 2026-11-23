@@ -1,0 +1,64 @@
+@use "../../assets/palette.scss" as palette;
+
+.card {
+    position: relative;
+    padding: 2em;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    img {
+        width: 40%;
+        flex-shrink: 0;
+        height: auto;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: stretch;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    rect {
+        fill: none;
+        stroke: palette.$plum;
+        stroke-width: 4px;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.8s ease;
+    }
+}
+
+.card:hover .frame rect {
+    stroke-dashoffset: 1;
+}
+
+.card h3,
+.card p {
+    font-family: "Raleway", sans-serif;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2em;
+}

@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer id="contact" className={styles.footer}>
             <span className={styles.span}>0424 802 218</span>
             <span className={styles.span}>martyna.krool@gmail.com</span>
             <span>

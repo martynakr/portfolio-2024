@@ -12,14 +12,26 @@ const BendingLine = () => {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        const points: { x: number; y: number }[] = [];
+        const points: { x: number; y: number; vy: number; target: number }[] =
+            [];
         const numPoints = 60;
+        const maxOffset = 50;
+        const radius = 120;
+        const stiffness = 0.08;
+        const damping = 0.82;
+        let baseY = 0;
+        let mouse: { x: number; y: number } | null = null;
+        let frameId = 0;
+        const introDuration = 1500;
+        let introStart: number | null = null;
+        let introDone = false;
 
         const initializePoints = () => {
             points.length = 0;
+            baseY = canvas.height / 2;
             const spacing = canvas.width / (numPoints - 1);
             for (let i = 0; i < numPoints; i++) {
-                points.push({ x: i * spacing, y: 2 * (canvas.height / 3) });
+                points.push({ x: i * spacing, y: baseY, vy: 0, target: baseY });
             }
         };
 
@@ -41,32 +53,75 @@ const BendingLine = () => {
             );
 
             ctx.lineWidth = 40;
-            ctx.strokeStyle = "#CEEBFF";
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, "#CEEBFF");
+            gradient.addColorStop(0.5, "#E2D9FF");
+            gradient.addColorStop(1, "#FFDCCF");
+            ctx.strokeStyle = gradient;
             ctx.stroke();
             ctx.closePath();
         };
 
-        const handleMouseMove = (event: MouseEvent) => {
-            const rect = canvas.getBoundingClientRect();
-            const mouseX = event.clientX - rect.left;
-            const mouseY = event.clientY - rect.top;
+        const easeInOut = (t: number) =>
+            t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
-            for (let i = 0; i < points.length; i++) {
-                const dx = points[i].x - mouseX;
-                const dy = points[i].y - mouseY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const maxDist = 100;
-                const influence = Math.max(0, (maxDist - distance) / maxDist);
-                points[i].y = 2 * (canvas.height / 3) + influence * 50;
+        const getGhost = (now: number) => {
+            if (introDone) return null;
+            if (introStart === null) introStart = now;
+            const t = (now - introStart) / introDuration;
+            if (t >= 1) {
+                introDone = true;
+                return null;
+            }
+            const start = -radius;
+            const end = canvas.width + radius;
+            const offsetY = 30;
+            const e = easeInOut(t);
+            return { x: start + (end - start) * e, y: baseY - offsetY };
+        };
+
+        const updateTargets = (now: number) => {
+            const pointer = mouse ?? getGhost(now);
+            for (const p of points) {
+                if (!pointer) {
+                    p.target = baseY;
+                    continue;
+                }
+                const dx = p.x - pointer.x;
+                const dy = pointer.y - baseY;
+                const horizontal = Math.exp(-(dx * dx) / (2 * (radius / 2) ** 2));
+                const vertical = Math.max(0, 1 - Math.abs(dy) / (canvas.height / 2));
+                const direction = dy < 0 ? 1 : -1;
+                p.target = baseY + direction * maxOffset * horizontal * vertical;
+            }
+        };
+
+        const animate = (now: number) => {
+            updateTargets(now);
+            for (const p of points) {
+                p.vy += (p.target - p.y) * stiffness;
+                p.vy *= damping;
+                p.y += p.vy;
             }
             drawLine();
+            frameId = requestAnimationFrame(animate);
+        };
+
+        const handleMouseMove = (event: MouseEvent) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse = { x: event.clientX - rect.left, y: event.clientY - rect.top };
+            introDone = true;
+        };
+
+        const handleMouseLeave = () => {
+            mouse = null;
         };
 
         const resizeCanvas = () => {
             if (window.innerWidth <= 992) {
-                canvas.width = window.innerWidth * 0.8;
+                canvas.width = window.innerWidth * 0.95;
             } else {
-                canvas.width = window.innerWidth * 0.7;
+                canvas.width = window.innerWidth * 0.9;
             }
             canvas.height = 200;
             initializePoints();
@@ -74,12 +129,16 @@ const BendingLine = () => {
         };
 
         canvas.addEventListener("mousemove", handleMouseMove);
+        canvas.addEventListener("mouseleave", handleMouseLeave);
         window.addEventListener("resize", resizeCanvas);
 
         resizeCanvas();
+        frameId = requestAnimationFrame(animate);
 
         return () => {
+            cancelAnimationFrame(frameId);
             canvas.removeEventListener("mousemove", handleMouseMove);
+            canvas.removeEventListener("mouseleave", handleMouseLeave);
             window.removeEventListener("resize", resizeCanvas);
         };
     }, []);

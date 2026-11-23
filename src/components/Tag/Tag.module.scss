@@ -1,0 +1,26 @@
+@use "../../assets/palette.scss" as palette;
+
+.tag {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    padding: 0.5em 1.4em;
+    border-radius: 999px;
+    border: 1.5px solid palette.$deepLilac;
+    background-color: white;
+    color: palette.$plum;
+    box-shadow: 0 2px 8px rgba(91, 74, 158, 0.12);
+    transition: transform 0.2s ease, background-color 0.2s ease,
+        border-color 0.2s ease;
+
+    &.small {
+        font-size: 0.8rem;
+        padding: 0.3em 0.9em;
+        box-shadow: none;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: palette.$deepLilac;
+        background-color: palette.$lilac;
+    }
+}

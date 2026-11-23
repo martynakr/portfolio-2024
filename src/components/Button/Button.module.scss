@@ -1,0 +1,31 @@
+@use "../../assets/palette.scss" as palette;
+@use "../../assets/mixins.scss" as mixins;
+
+.button,
+.button:visited {
+    display: inline-block;
+    text-align: center;
+
+    @include mixins.phone {
+        display: block;
+        width: 100%;
+    }
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.6em 1.6em;
+    border-radius: 999px;
+    border: 1.5px solid palette.$plum;
+    background-color: palette.$plum;
+    color: palette.$peach;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease,
+        color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: white;
+        color: palette.$plum;
+    }
+}

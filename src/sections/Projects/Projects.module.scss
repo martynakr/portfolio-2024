@@ -1,0 +1,27 @@
+@use "../../assets/typography.scss" as typography;
+@use "../../assets/textures.scss" as textures;
+
+.projects {
+    background-color: white;
+    text-align: center;
+    @include textures.dot-texture;
+}
+
+.heading {
+    @include typography.section-heading;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: minmax(0, 800px);
+    justify-content: center;
+    gap: 4em;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 3em 2em;
+
+    @media (max-width: 600px) {
+        padding: 2em 1em;
+    }
+    text-align: left;
+}

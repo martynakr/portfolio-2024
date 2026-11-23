@@ -1,0 +1,19 @@
+@mixin dot-texture {
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background-image: radial-gradient(#d6cdf5 1px, transparent 1px);
+        background-size: 22px 22px;
+        mask-image: radial-gradient(
+            ellipse at center,
+            black 30%,
+            transparent 75%
+        );
+    }
+}
