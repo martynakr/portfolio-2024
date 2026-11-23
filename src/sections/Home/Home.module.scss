@@ -1,5 +1,6 @@
 @use "../../assets/palette.scss" as palette;
 @use "../../assets/textures.scss" as textures;
+@use "../../assets/mixins.scss" as mixins;
 
 .home {
     display: flex;
@@ -19,7 +20,6 @@
 .line {
     grid-area: 1 / 1 / 2 / 2;
 
-    // Inline canvas adds a gap below it, which pushes the line off-centre
     canvas {
         display: block;
     }
@@ -35,8 +35,21 @@
     align-self: center;
     margin: 0;
     line-height: 1;
-    // Trim space above caps / below baseline so the letters sit exactly centered
     text-box: trim-both cap alphabetic;
+
+    @include mixins.phone {
+        font-size: 14vw;
+        line-height: 1.1;
+    }
+}
+
+.word {
+    font: inherit;
+    letter-spacing: inherit;
+
+    @include mixins.phone {
+        display: block;
+    }
 }
 
 @keyframes fadeUp {
@@ -80,6 +93,6 @@
 
 .divider {
     font-weight: 900;
-    color: #a993e8; // deeper lilac, same hue as the line
+    color: #a993e8;
     margin: 0 5px;
 }

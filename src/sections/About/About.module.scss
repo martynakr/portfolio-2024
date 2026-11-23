@@ -1,17 +1,23 @@
 @use "../../assets/palette.scss" as palette;
 @use "../../assets/typography.scss" as typography;
+@use "../../assets/mixins.scss" as mixins;
 
 .about {
-    // Faint wash of the bending line colours
     background: linear-gradient(
         120deg,
-        rgba(206, 235, 255, 0.5), // light blue
-        rgba(226, 217, 255, 0.5), // lilac
-        rgba(255, 220, 207, 0.5) // peach
+        rgba(206, 235, 255, 0.5),
+        rgba(226, 217, 255, 0.5),
+        rgba(255, 220, 207, 0.5)
     );
     display: flex;
     align-items: center;
     gap: 5%;
+    padding: 8% 12%;
+
+    @include mixins.phone {
+        flex-direction: column-reverse;
+        gap: 2em;
+    }
 }
 
 .heading {
@@ -26,6 +32,11 @@
 
 .image {
     width: 30%;
-    border: 3px solid #a993e8; // same lilac as the Home divider
+    border: 3px solid #a993e8;
     border-radius: 12px;
+
+    @include mixins.phone {
+        width: 70%;
+        max-width: 280px;
+    }
 }

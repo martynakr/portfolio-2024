@@ -6,7 +6,8 @@ const Home = () => {
         <div className={styles.home}>
             <header className={styles.container}>
                 <h1 className={`${styles.heading} ${styles.fadeUp}`}>
-                    MARTYNA KRÓL
+                    <span className={styles.word}>MARTYNA</span>{" "}
+                    <span className={styles.word}>KRÓL</span>
                 </h1>
                 <div className={styles.line}>
                     <BendingLine />

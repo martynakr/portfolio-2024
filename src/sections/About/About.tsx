@@ -4,7 +4,7 @@ import meImage from "../../assets/me.jpeg";
 
 const About = () => {
     return (
-        <section className={styles.about}>
+        <section id="about" className={styles.about}>
             <img
                 src={meImage}
                 alt="woman standing on a bridge"

@@ -1,57 +1,99 @@
 @use "../../assets/palette.scss" as palette;
 
+$frame: 6px;
+
 .card {
     position: relative;
-    border-left: 16px solid palette.$skyBlue;
     padding: 2em;
-    margin: 2em;
     overflow: hidden;
-    width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    img {
+        width: 40%;
+        flex-shrink: 0;
+        height: auto;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: stretch;
+
+        img {
+            width: 100%;
+        }
+    }
 }
 
+.card h3,
+.card p {
+    font-family: "Raleway", sans-serif;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2em;
+}
+
+.left,
 .top,
 .right,
 .bottom {
     position: absolute;
-    background-color: palette.$skyBlue;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+.left {
+    top: 0;
+    left: 0;
+    width: $frame;
+    height: 100%;
+    background: palette.$skyBlue;
 }
 
 .top {
     top: 0;
     left: 0;
-    height: 16px;
-    width: 0;
+    height: $frame;
+    width: 100%;
+    clip-path: inset(0 100% 0 0);
+    background: linear-gradient(90deg, palette.$skyBlue, palette.$lilac);
     transition-delay: 0s;
 }
 
 .right {
     top: 0;
     right: 0;
-    width: 16px;
-    height: 0;
+    width: $frame;
+    height: 100%;
+    clip-path: inset(0 0 100% 0);
+    background: linear-gradient(180deg, palette.$lilac, palette.$peach);
     transition-delay: 0.2s;
 }
 
 .bottom {
     bottom: 0;
     right: 0;
-    height: 16px;
-    width: 0;
+    height: $frame;
+    width: 100%;
+    clip-path: inset(0 0 0 100%);
+    background: linear-gradient(90deg, palette.$skyBlue, palette.$peach);
     transition-delay: 0.4s;
 }
 
 .card:hover {
-    .top {
-        width: 100%;
-    }
-
-    .right {
-        height: 100%;
-    }
-
+    .top,
+    .right,
     .bottom {
-        width: 100%;
+        clip-path: inset(0);
     }
 }

@@ -54,9 +54,9 @@ const BendingLine = () => {
 
             ctx.lineWidth = 40;
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-            gradient.addColorStop(0, "#CEEBFF"); // light blue
-            gradient.addColorStop(0.5, "#E2D9FF"); // soft lilac
-            gradient.addColorStop(1, "#FFDCCF"); // soft peach
+            gradient.addColorStop(0, "#CEEBFF");
+            gradient.addColorStop(0.5, "#E2D9FF");
+            gradient.addColorStop(1, "#FFDCCF");
             ctx.strokeStyle = gradient;
             ctx.stroke();
             ctx.closePath();
@@ -65,7 +65,6 @@ const BendingLine = () => {
         const easeInOut = (t: number) =>
             t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
-        // Ghost cursor: sweeps left to right above the line
         const getGhost = (now: number) => {
             if (introDone) return null;
             if (introStart === null) introStart = now;
@@ -90,11 +89,8 @@ const BendingLine = () => {
                 }
                 const dx = p.x - pointer.x;
                 const dy = pointer.y - baseY;
-                // Smooth bell-shaped falloff along the line
                 const horizontal = Math.exp(-(dx * dx) / (2 * (radius / 2) ** 2));
-                // Stronger when the cursor is closer to the line vertically
                 const vertical = Math.max(0, 1 - Math.abs(dy) / (canvas.height / 2));
-                // Cursor above -> push down, below -> push up
                 const direction = dy < 0 ? 1 : -1;
                 p.target = baseY + direction * maxOffset * horizontal * vertical;
             }

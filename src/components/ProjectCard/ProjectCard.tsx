@@ -1,6 +1,12 @@
+import Button from "../Button/Button";
+import Tag from "../Tag/Tag";
 import styles from "./ProjectCard.module.scss";
 
-const ProjectCard = () => {
+interface ProjectCardProps {
+    tech: string[];
+}
+
+const ProjectCard = ({ tech }: ProjectCardProps) => {
     return (
         <article className={styles.card}>
             <span className={styles.top} />
@@ -17,7 +23,14 @@ const ProjectCard = () => {
                     quod consequatur fugit, officiis quae dolores modi
                     doloremque incidunt molestiae dignissimos ducimus.
                 </p>
-                <button>Check it out on GitHub</button>
+                <div className={styles.tags}>
+                    {tech.map((t) => (
+                        <Tag key={t} text={t} size="small" />
+                    ))}
+                </div>
+                <Button href="https://github.com/martynakr">
+                    Check it out on GitHub
+                </Button>
             </div>
         </article>
     );
