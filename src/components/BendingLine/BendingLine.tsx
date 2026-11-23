@@ -53,7 +53,11 @@ const BendingLine = () => {
             );
 
             ctx.lineWidth = 40;
-            ctx.strokeStyle = "#CEEBFF";
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, "#CEEBFF"); // light blue
+            gradient.addColorStop(0.5, "#E2D9FF"); // soft lilac
+            gradient.addColorStop(1, "#FFDCCF"); // soft peach
+            ctx.strokeStyle = gradient;
             ctx.stroke();
             ctx.closePath();
         };
@@ -119,9 +123,9 @@ const BendingLine = () => {
 
         const resizeCanvas = () => {
             if (window.innerWidth <= 992) {
-                canvas.width = window.innerWidth * 0.8;
+                canvas.width = window.innerWidth * 0.95;
             } else {
-                canvas.width = window.innerWidth * 0.7;
+                canvas.width = window.innerWidth * 0.9;
             }
             canvas.height = 200;
             initializePoints();
