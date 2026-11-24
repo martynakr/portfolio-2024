@@ -1,1 +1,19 @@
-[{ "id": "1", "title": "Lorem ipsum", "description": "" }]
+[
+    {
+        "id": "1",
+        "title": "Wedding RSVP",
+        "image": "/projects/wedding-rsvp.jpg",
+        "description": "A bilingual (English and Polish) wedding RSVP app with a serverless AWS backend. Guests log in with an invitation code to see wedding day details and submit their RSVP and dietary requirements, with JWT authentication stored in an HTTP-only cookie.",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "AWS Lambda",
+            "API Gateway",
+            "DynamoDB",
+            "Serverless"
+        ],
+        "github": "https://github.com/martynakr/wedding-rsvp",
+        "live": "https://pierreandmartyna.com/"
+    }
+]
