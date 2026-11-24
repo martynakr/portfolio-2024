@@ -1,5 +1,21 @@
 [
     {
+        "id": "2",
+        "title": "Ecommerce Backend",
+        "image": "/projects/ecommerce-docs.png",
+        "description": "A REST API for an online shop. Users can register and log in with JWT authentication, browse products and categories, and add items to a cart with stock availability checks. Request validation is done with Zod, the API is documented with Swagger, and it's covered by unit and integration tests run in CI.",
+        "tags": [
+            "Express",
+            "TypeScript",
+            "PostgreSQL",
+            "Prisma",
+            "Docker",
+            "Zod",
+            "Vitest"
+        ],
+        "github": "https://github.com/martynakr/express-ecommerce-backend"
+    },
+    {
         "id": "1",
         "title": "Wedding RSVP",
         "image": "/projects/wedding-rsvp.jpg",
