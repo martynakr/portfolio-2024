@@ -1,8 +1,9 @@
+@use "../../assets/typography.scss" as typography;
 @use "../../assets/palette.scss" as palette;
 
 .tag {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
+    font-family: typography.$font-display;
+    font-weight: typography.$weight-regular;
     font-size: 0.9rem;
     padding: 0.4em 1.1em;
     border-radius: 999px;

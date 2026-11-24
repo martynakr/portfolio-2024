@@ -1,3 +1,4 @@
+@use "../../assets/typography.scss" as typography;
 @use "../../assets/palette.scss" as palette;
 @use "../../assets/textures.scss" as textures;
 @use "../../assets/mixins.scss" as mixins;
@@ -29,8 +30,8 @@
     grid-area: 1 / 1 / 2 / 2;
     z-index: 1;
     pointer-events: none;
-    font-family: "Raleway", sans-serif;
-    font-weight: 300;
+    font-family: typography.$font-display;
+    font-weight: typography.$weight-light;
     font-size: clamp(3rem, 8vw, 6.5rem);
     align-self: center;
     margin: 0;
@@ -85,16 +86,16 @@
 }
 
 .roles {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
+    font-family: typography.$font-display;
+    font-weight: typography.$weight-regular;
     font-size: clamp(1rem, 1.6vw, 1.35rem);
     text-transform: uppercase;
     letter-spacing: 0.25em;
 }
 
 .divider {
-    font-weight: 900;
-    color: #a993e8;
+    font-weight: typography.$weight-black;
+    color: palette.$deepLilac;
     margin: 0 5px;
 }
 

@@ -1,3 +1,4 @@
+@use "../../assets/typography.scss" as typography;
 @use "../../assets/palette.scss" as palette;
 
 .card {
@@ -7,7 +8,7 @@
     width: 100%;
     box-sizing: border-box;
     background-color: white;
-    font-family: "Raleway", sans-serif;
+    font-family: typography.$font-display;
     border-radius: 16px;
 
     display: flex;
@@ -53,7 +54,7 @@
 
 .card h3,
 .card p {
-    font-family: "Raleway", sans-serif;
+    font-family: typography.$font-display;
 }
 
 .tags {

@@ -1,3 +1,4 @@
+@use "../../assets/typography.scss" as typography;
 @use "../../assets/palette.scss" as palette;
 @use "../../assets/mixins.scss" as mixins;
 
@@ -28,8 +29,8 @@
 .link,
 .link:visited {
     position: relative;
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
+    font-family: typography.$font-display;
+    font-weight: typography.$weight-regular;
     font-size: 0.95rem;
     color: black;
     text-decoration: none;

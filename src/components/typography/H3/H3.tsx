@@ -1,4 +1,3 @@
-import styles from "./H3.module.scss";
 
 interface H3Props {
     children: React.ReactNode;
@@ -9,7 +8,7 @@ interface H3Props {
 const H3 = ({ children, color, className }: H3Props) => {
     return (
         <h3
-            className={`${styles.small_heading} ${className ?? ""}`}
+            className={className}
             style={{ color }}
         >
             {children}

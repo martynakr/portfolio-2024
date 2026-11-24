@@ -1,3 +1,4 @@
+@use "../../assets/typography.scss" as typography;
 @use "../../assets/palette.scss" as palette;
 
 .footer {
@@ -11,7 +12,7 @@
     justify-content: space-around;
     align-items: center;
     gap: 0.5em 2em;
-    font-family: "Raleway", sans-serif;
+    font-family: typography.$font-display;
     color: black;
 
     @media (max-width: 992px) {
@@ -25,16 +26,16 @@
 }
 
 .footer * {
-    font-family: "Raleway", sans-serif;
+    font-family: typography.$font-display;
 }
 
 .span {
-    font-weight: 300;
+    font-weight: typography.$weight-light;
     overflow-wrap: anywhere;
 }
 
 .footer a,
 .footer a:visited {
-    font-weight: 300;
+    font-weight: typography.$weight-light;
     color: black;
 }
