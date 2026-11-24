@@ -1,5 +1,23 @@
 [
     {
+        "id": "3",
+        "title": "Employee Creator",
+        "image": "/projects/employee-management-frontend.png",
+        "description": "A React and TypeScript app for browsing and managing employees, with search, employee detail pages and an AI chat assistant. Data fetching and caching are handled with TanStack Query, forms with React Hook Form and Zod validation, and UI components are built with Tailwind CSS and documented and tested in Storybook. It's backed by an Express and MongoDB REST API.",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "TanStack Query",
+            "React Hook Form",
+            "Zod",
+            "Storybook",
+            "Express",
+            "MongoDB"
+        ],
+        "github": "https://github.com/martynakr/employee-management-app-express"
+    },
+    {
         "id": "2",
         "title": "Ecommerce Backend",
         "image": "/projects/ecommerce-docs.png",

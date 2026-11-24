@@ -15,7 +15,7 @@
     gap: 2em;
 
     img {
-        width: 40%;
+        width: 50%;
         flex-shrink: 0;
         height: auto;
     }
@@ -65,7 +65,7 @@
 
 .image {
     border-radius: 8px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
     object-position: left top;
 }
