@@ -1,5 +1,6 @@
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import ProjectCard, { Project } from "../../components/ProjectCard/ProjectCard";
 import H3 from "../../components/typography/H3/H3";
+import projects from "./project-data.json";
 import styles from "./Projects.module.scss";
 
 const Projects = () => {
@@ -7,9 +8,9 @@ const Projects = () => {
         <section id="projects" className={styles.projects}>
             <H3 className={styles.heading}>PROJECTS</H3>
             <div className={styles.list}>
-                <ProjectCard tech={["React", "TypeScript", "SCSS"]} />
-                <ProjectCard tech={["Java", "Spring Boot", "SQL"]} />
-                <ProjectCard tech={["Node.js", "Express", "AWS"]} />
+                {(projects as Project[]).map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                ))}
             </div>
         </section>
     );

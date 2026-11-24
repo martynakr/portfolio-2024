@@ -62,3 +62,15 @@
     gap: 0.4rem;
     margin-bottom: 1.2em;
 }
+
+.image {
+    border-radius: 8px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+}
