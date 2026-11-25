@@ -19,10 +19,11 @@
     },
     {
         "id": "2",
-        "title": "Ecommerce Backend",
-        "image": "/projects/ecommerce-docs.png",
-        "description": "A REST API for an online shop. Users can register and log in with JWT authentication, browse products and categories, and add items to a cart with stock availability checks. Request validation is done with Zod, the API is documented with Swagger, and it's covered by unit and integration tests run in CI.",
+        "title": "Ecommerce Store",
+        "image": "/projects/ecommerce.png",
+        "description": "A full-stack online shop with a Vue.js and TypeScript frontend for browsing products with stock availability. The backend is an Express REST API where users can register and log in with JWT authentication, browse products and categories, and add items to a cart with stock checks. Request validation is done with Zod, the API is documented with Swagger, and it's covered by unit and integration tests run in CI.",
         "tags": [
+            "Vue",
             "Express",
             "TypeScript",
             "PostgreSQL",
@@ -31,7 +32,7 @@
             "Zod",
             "Vitest"
         ],
-        "github": "https://github.com/martynakr/express-ecommerce-backend"
+        "github": "https://github.com/martynakr/express-vuejs-ecommerce"
     },
     {
         "id": "1",
