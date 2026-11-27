@@ -1,5 +1,19 @@
 [
     {
+        "id": "4",
+        "title": "Flight Search & Booking",
+        "image": "/projects/flights-api.png",
+        "description": "A flight search and booking API built with NestJS and TypeScript. Flights and bookings are stored in DynamoDB, with a data model designed around access patterns so that taking a seat is a single safe update. Flights are copied into Elasticsearch to support searching by route and date. Local and UTC times are handled with Luxon, so dates are based on the departure airport. DynamoDB and Elasticsearch run locally in Docker.",
+        "tags": [
+            "NestJS",
+            "TypeScript",
+            "DynamoDB",
+            "Elasticsearch",
+            "Docker"
+        ],
+        "github": "https://github.com/martynakr/flight-search-booking-nestjs"
+    },
+    {
         "id": "3",
         "title": "Employee Creator",
         "image": "/projects/employee-management-frontend.png",
